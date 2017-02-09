@@ -1,0 +1,4 @@
+http://dblp.uni-trier.de/db/journals/mam/
+http://dblp.uni-trier.de/db/journals/tjs/
+http://dblp.uni-trier.de/db/journals/jetc/
+http://dblp.uni-trier.de/db/journals/rts/

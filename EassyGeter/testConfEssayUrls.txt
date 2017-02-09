@@ -1,0 +1,2 @@
+http://dblp.uni-trier.de/db/conf/asplos/
+http://dblp.uni-trier.de/db/conf/fast/
