@@ -22,6 +22,16 @@ def is_target_string(src, pat):
         return False
 
 
+def is_double_target_string(src, pat, sub_pat):
+    if not is_target_string(src, pat):
+        return False
+    ret = re.search(sub_pat, src, re.I)
+    if ret is not None:
+        return True
+    else:
+        return False
+
+
 def zx_page(url):
     time.sleep(0.5)
     return requests.get(url, headers={
@@ -52,48 +62,6 @@ def check_tail_number_big_than(src, valve):
         return True
     else:
         return False
-
-
-def analyze_conf_to_volume(download):
-    r = zx_page(download)
-    bs = BeautifulSoup(r, "html.parser")
-
-    main_page = bs.find(name='header', attrs={'class': 'headline noline'})
-
-    conf_name = main_page.h1.get_text()
-    #  print conf_name
-
-    # now we have name of conf
-
-    conf_link = []
-    conf_title_list = []
-    volumes = bs.find_all(name='div', attrs={'class': 'data', 'itemprop': 'headline'})
-    for v_s in volumes:
-        tts = v_s.find(name='span', attrs={'class': 'title', 'itemprop': 'name'})
-        conf_title = tts.get_text()
-        vss = v_s.find_all(name='a')
-        for evss in vss:
-            if evss.get_text() == u'[contents]':
-                if check_year(evss['href'], 2013):
-                    #  print evss['href']
-                    #  print conf_title
-                    conf_title_list.append(conf_title)
-                    conf_link.append(evss['href'])
-    return conf_link, conf_title_list, conf_name
-
-
-def analyze_volume_to_name(vol, pat):
-    r = zx_page(vol)
-    bs = BeautifulSoup(r, "html.parser")
-
-    main_page = bs.find_all(name='span', attrs={'class': 'title', 'itemprop': 'name'})
-
-    ret = []
-    for emp in main_page:
-        if is_target_string(emp.get_text(), pat):
-            #  print emp.get_text()
-            ret.append(emp.get_text())
-    return ret
 
 
 def examian_single_page(url):
@@ -158,7 +126,7 @@ def is_out_of_date_report(src, valve):
         return True
 
 
-def single_column_analyze(url, pat, valve):
+def single_column_analyze(url, pat, sub_pat, valve, writer):
     ret_title = []
     ret_url = []
     #  loop
@@ -168,18 +136,32 @@ def single_column_analyze(url, pat, valve):
     #  get the next page url
     is_out_date = False
     next_page = url
+    writer.write('Now we begin from here: ')
+    writer.write(url)
+    writer.write('\n')
+    writer.flush()
     while is_out_date is False:
-        titles, urls, is_out_date, next_page = single_page_news_analyze(next_page, pat, valve)
+        print 'Now we will see in this page: ', next_page
+        titles, urls, is_out_date, next_page = single_page_news_analyze(next_page, pat, sub_pat, valve)
         if len(titles) != len(urls):
             print 'there is some errors, infos follow:'
             print 'url: ', url
             return ret_title, ret_url
+        i = 0
+        while i < len(titles):
+            writer.write('#####')
+            writer.write(titles[i])
+            writer.write('\n')
+            writer.write(urls[i])
+            writer.write('\n')
+            i += 1
+        writer.flush()
         ret_title.extend(titles)
         ret_url.extend(urls)
     return ret_title, ret_url
 
 
-def single_page_news_analyze(url, pat, valve):
+def single_page_news_analyze(url, pat, sub_pat, valve):
     page_news_count = 0
     is_out_date = False
     ret_title = []
@@ -199,7 +181,7 @@ def single_page_news_analyze(url, pat, valve):
             break
         ret_2 = ee.find(name='h2', attrs={'itemprop': 'headline', 'class': 'articulo-titulo'})
         title = ret_2.a.get_text()
-        if is_target_string(title, pat):
+        if is_double_target_string(title, pat, sub_pat):
             ret_title.append(title)
             ret_url.append(ret_2.a['href'])
             if TEST_FLAG:
@@ -243,5 +225,5 @@ if __name__ == '__main__':
     #  basic_connect_test(elpaisUrl)
     #  single_page_news_analyze(international, pattern)
     #  print is_out_of_date_report('2017-02-06T21:33:33', 20170206)
-    single_column_analyze(international, pattern, 20161200)
+    #  single_column_analyze(international, pattern, 20161200)
 

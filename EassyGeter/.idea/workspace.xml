@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2640bc7a-48a3-44ad-8465-445022dfb32a" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tryWrite.md" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/elpaisGeter.py" afterPath="$PROJECT_DIR$/elpaisGeter.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
     </list>
     <ignored path="EassyGeter.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -16,7 +17,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/EassyGeter$elpaisGeter.coverage" NAME="elpaisGeter Coverage Results" MODIFIED="1486625004756" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/EassyGeter$main.coverage" NAME="main Coverage Results" MODIFIED="1486626928166" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/EassyGeter$main.coverage" NAME="main Coverage Results" MODIFIED="1486645461113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/EassyGeter$ConfPartFunc.coverage" NAME="ConfPartFunc Coverage Results" MODIFIED="1486608880340" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/EassyGeter$partFunc.coverage" NAME="partFunc Coverage Results" MODIFIED="1486608823731" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
@@ -29,33 +30,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="partFunc.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/partFunc.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1635">
-              <caret line="109" column="7" selection-start-line="109" selection-start-column="7" selection-end-line="109" selection-end-column="7" />
-              <folding>
-                <element signature="e#41#68#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConfPartFunc.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ConfPartFunc.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="84" column="4" selection-start-line="84" selection-start-column="4" selection-end-line="84" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
+            <state relative-caret-position="360">
+              <caret line="24" column="15" selection-start-line="24" selection-start-column="15" selection-end-line="24" selection-end-column="15" />
               <folding>
                 <element signature="e#39#49#0" expanded="true" />
               </folding>
@@ -66,13 +45,13 @@
       <file leaf-file-name="elpaisGeter.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/elpaisGeter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="779">
-              <caret line="167" column="28" selection-start-line="167" selection-start-column="28" selection-end-line="167" selection-end-column="28" />
+            <state relative-caret-position="885">
+              <caret line="173" column="37" selection-start-line="173" selection-start-column="37" selection-end-line="173" selection-end-column="37" />
               <folding>
                 <element signature="e#41#68#0" expanded="true" />
-                <element signature="e#2388#3284#0" expanded="false" />
-                <element signature="e#3323#3830#0" expanded="false" />
-                <element signature="e#6375#6578#0" expanded="false" />
+                <element signature="e#1291#2187#0" expanded="false" />
+                <element signature="e#2226#2733#0" expanded="false" />
+                <element signature="e#5749#5952#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -116,9 +95,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/main.py" />
-        <option value="$PROJECT_DIR$/elpaisGeter.py" />
         <option value="$PROJECT_DIR$/tryWrite.md" />
+        <option value="$PROJECT_DIR$/elpaisGeter.py" />
+        <option value="$PROJECT_DIR$/main.py" />
       </list>
     </option>
   </component>
@@ -512,7 +491,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29826733" sideWeight="0.4970803" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5594059" sideWeight="0.4970803" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -578,9 +557,9 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#41#68#0" expanded="true" />
-            <element signature="e#2388#3284#0" expanded="false" />
-            <element signature="e#3323#3830#0" expanded="false" />
-            <element signature="e#6375#6578#0" expanded="false" />
+            <element signature="e#1291#2187#0" expanded="false" />
+            <element signature="e#2226#2733#0" expanded="false" />
+            <element signature="e#5749#5952#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -601,28 +580,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/partFunc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1635">
-          <caret line="109" column="7" selection-start-line="109" selection-start-column="7" selection-end-line="109" selection-end-column="7" />
-          <folding>
-            <element signature="e#41#68#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ConfEssayFetcher.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="11" column="35" selection-start-line="0" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ConfPartFunc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="84" column="4" selection-start-line="84" selection-start-column="4" selection-end-line="84" selection-end-column="4" />
           <folding />
         </state>
       </provider>
@@ -643,23 +604,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/elpaisGeter.py">
+    <entry file="file://$PROJECT_DIR$/ConfPartFunc.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="779">
-          <caret line="167" column="28" selection-start-line="167" selection-start-column="28" selection-end-line="167" selection-end-column="28" />
+        <state relative-caret-position="184">
+          <caret line="84" column="4" selection-start-line="84" selection-start-column="4" selection-end-line="84" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/partFunc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1635">
+          <caret line="109" column="7" selection-start-line="109" selection-start-column="7" selection-end-line="109" selection-end-column="7" />
           <folding>
             <element signature="e#41#68#0" expanded="true" />
-            <element signature="e#2388#3284#0" expanded="false" />
-            <element signature="e#3323#3830#0" expanded="false" />
-            <element signature="e#6375#6578#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elpaisGeter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="885">
+          <caret line="173" column="37" selection-start-line="173" selection-start-column="37" selection-end-line="173" selection-end-column="37" />
+          <folding>
+            <element signature="e#41#68#0" expanded="true" />
+            <element signature="e#1291#2187#0" expanded="false" />
+            <element signature="e#2226#2733#0" expanded="false" />
+            <element signature="e#5749#5952#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
+        <state relative-caret-position="360">
+          <caret line="24" column="15" selection-start-line="24" selection-start-column="15" selection-end-line="24" selection-end-column="15" />
           <folding>
             <element signature="e#39#49#0" expanded="true" />
           </folding>
