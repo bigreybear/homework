@@ -12,6 +12,7 @@ ELPAIS_INTERNATIONAL = 'http://elpais.com/tag/c/15148420ba519668342b7a63149cad97
 ELPAIS_OPINION_EDITORIAL = 'http://elpais.com/tag/c/514bd6a205caa1702b2026725f48a60d'
 REGEX_PAT_2 = r'una terror|la terror|las terror|terrorista'
 SUB_REGEX_PAT = r'una'
+RIGID_PAT = r'una terrorista|la terrorista|las terroristas'
 
 BREAKPOINT_URL = 'http://elpais.com/tag/c/514bd6a205caa1702b2026725f48a60d/1537'
 

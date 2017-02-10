@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # encoding=utf-8
 
-
+import sys
 from xml.dom import minidom
 import codecs
 import traceback
@@ -104,6 +104,9 @@ def examine_page_list(pattern):
 
 
 def basic_connect_test(url):
+    #  to examian if the last char of the url is a \n, which could be a error
+    if url[-1] == '\n':
+        url = url[:-1]
     r = zx_page(url)
     bs = BeautifulSoup(r, "html.parser")
     return bs
@@ -180,6 +183,8 @@ def single_page_news_analyze(url, pat, sub_pat, valve):
         if is_out_date:
             break
         ret_2 = ee.find(name='h2', attrs={'itemprop': 'headline', 'class': 'articulo-titulo'})
+        if ret_2.a is None:
+            break
         title = ret_2.a.get_text()
         if is_double_target_string(title, pat, sub_pat):
             ret_title.append(title)
@@ -206,14 +211,62 @@ def date_parser(src):
     return year, month, day
 
 
+def get_time_stamp():
+    time_str = time.strftime('%m%d-%H%M%S', time.localtime(time.time()))
+    return time_str
+
+
+def report_analyze(url, r_pat, rst_writer):
+    # rst_writer.write(get_time_stamp())
+    # rst_writer.write('\n')
+    # rst_writer.flush()
+    bs = basic_connect_test(url)
+    #  print 'bs, url:', bs
+    res = bs.find_all(name='p')
+    for ee in res:
+        exa = ee.get_text()
+        #  print exa
+        if is_target_string(exa, r_pat):
+            rst_writer.write(url)
+            rst_writer.write('\n')
+            rst_writer.write(exa)
+            rst_writer.write('\n\n')
+            rst_writer.flush()
+            print 'Succeed!'
+            break
+    return 0
+
+
+def mid_reader(path, r_pat, rst_writer):
+    mid_rdr = open(path, 'r')
+    contents = mid_rdr.readlines()
+    i = 2
+    while i <= len(contents)-1:
+        #  print 'url:', contents[i]
+        if is_target_string(contents[i], r'http:|https:'):
+            report_analyze(contents[i], r_pat, rst_writer)
+            print 'processed ', i, ' / ', len(contents)-1
+            if TEST_FLAG:
+                print contents[i], contents[i-1]
+        i += 1
+    return 0
+
+
 if __name__ == '__main__':
     # to test the funtion here
+    reload(sys)
+    sys.setdefaultencoding('utf-8')
+    rigid_pat = r'una terrorista|la terrorista|las terroristas|de Oriente'
     pattern = r'una terroris|la terroris|las terroris|trump'
     international = 'http://elpais.com/tag/c/15148420ba519668342b7a63149cad97'
     elpaisUrl = 'http://www.elpais.com'
     exptURL = 'http://dblp.uni-trier.de/db/conf/spaa/'
     conf_url = 'http://dblp.uni-trier.de/db/conf/asplos/'
     paper_url = 'http://dblp.uni-trier.de/db/conf/icde/icde2016.html'
+    report_url = 'http://internacional.elpais.com/internacional/2017/01/30/actualidad/1485745242_048891.html'
+    result_writer_fak = open('./rst/tryResult'+get_time_stamp()+'.md', 'w')
+
+    url_list_name_temp = 'internacional-una-terrorista.md'
     # testString = 'Particle Routing in sa-Consistency Distributed Particle
     # \Filters for Large-Scale Spatial Temporal Systems. correct'
     # print is_target_string(testString, pattern)
@@ -226,4 +279,10 @@ if __name__ == '__main__':
     #  single_page_news_analyze(international, pattern)
     #  print is_out_of_date_report('2017-02-06T21:33:33', 20170206)
     #  single_column_analyze(international, pattern, 20161200)
+    try:
+        #  print get_time_stamp()
+        #  report_analyze(report_url, rigid_pat, result_writer_fak)
+        mid_reader('./src/'+url_list_name_temp, rigid_pat, result_writer_fak)
+    finally:
+        result_writer_fak.close()
 
